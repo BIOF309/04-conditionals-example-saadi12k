@@ -1,0 +1,31 @@
+#we will use numpy to generate random results for 10 cohorts of 100 tosses using a coditional loop wrapped in a for loop
+#Import numpy as np and pyplot as plt
+import numpy as np
+import matplotlib.pyplot as plt
+#we will set the seed at 123
+np.random.seed(123)
+Heads_TenGames = []
+for i in range(10):
+    Heads = [0]
+    for x in range(100):
+        Head = Heads[-1]
+        coin = np.random.randint(0,1)
+        if coin == 0:
+            Head = Head + 1
+        Heads.append(Head)
+    Heads_TenGames.append(Heads)
+
+#Convert Heads_TenGames to Numpy array: np_ht
+np_ht = np.array(Heads_TenGames)
+
+# Plot np_aw and show
+plt.plot(np_ht)
+plt.show()
+# Clear the figure
+plt.clf()
+
+# Transpose np_ht: np_ht_t
+np_ht_t = np.transpose(np_ht)
+plt.plot(np_ht_t)
+plt.show()
+# Plot np_ht_t and show
